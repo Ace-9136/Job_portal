@@ -1,0 +1,78 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #80B6DE;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #DEB887;
+  }
+
+  tr:hover {
+    background-color: #F0E68C;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .action-buttons a {
+    margin: 2px;
+  }
+</style>
+
+<marquee style="font-family: 'Monotype Corsiva'; font-size: 25px; background-color: yellow; margin-top: 1%">
+  LATEST JOB LIST
+</marquee>
+<hr>
+<div class="container">
+  <table class="table table-hover" id="example">
+    <thead>
+      <tr>
+        <th>Sr.No.</th>
+        <th>Company Name</th>
+	<th>Job Title</th>
+	<th>Location</th>
+	<th>Start Date</th>
+        <th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in job %}
+      <tr style ="background-color: #DEB887">
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.recruiter.company}}</td>
+        <td>{{ i.title}}</td>
+<td>{{ i.location}}</td>
+        <td>{{ i.start_date }}</td>
+<td>{{ i.end_date }}</td>
+<td class="action-buttons">
+  <a href="{% url 'user_login' %}" class="btn btn-success btn-sm">Login to Apply</a>
+</td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+

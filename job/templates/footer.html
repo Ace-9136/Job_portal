@@ -1,0 +1,32 @@
+{% load static%}
+<div class="mt-10 " style = "background-color: black; width: 100% ; height:300px ">
+<div class= " container ">
+    <div class="row">
+        <div class="col-md-4 mt-3">
+            <h3 class="text-white">Contact Information</h3>
+            <p style="color: pink; font-size: 19px"> <i class="fa fa-map-marker"></i> Father Agnel, Vashi</p>
+            <p style="color: pink; font-size: 19px"> <i class="fa fa-envelope"></i> fatheragnel@gmail.com</p>
+            <p style="color: pink; font-size: 19px"> <i class="fa fa-mobile"></i> 123456 </p>
+        </div>
+        <div class="col-md-4 mt-3">
+            <h3 class="text-white">Online placement</h3>
+            <p style="color: pink; font-size: 19px">An employment website is a website that deals specially with employment or careers. Many employment websites are designed to allow employers to post job requirements for a position to be filled and are commonly known as job boards. </p>
+        </div>
+        <div class="col-md-4 mt-3">
+            <h3 class="text-white">Newsletter</h3>
+            <p style="color: pink; font-size: 19px">For extra information please send email id</p>
+            <form method="post" class="form-inline">
+                {% csrf_token %}
+                <input type="email" name="emailid" placeholder="Email ID" required class="form-control mr-2">
+                <input type="submit" value="send" class="btn btn-primary">
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</div>

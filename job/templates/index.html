@@ -1,0 +1,47 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+<style>
+    .content {
+        bottom: 0;
+        color: white;
+    }
+
+</style>
+
+<div class="container-fluid" style="margin-top: 1%">
+    <img src="{% static 'images/istockphoto-1279104620-612x612.jpg' %}" style="height: 450px; width: 100%">
+</div>
+<div class="container" style="background-color: black; height: 500px; margin-top: 2%">
+    <h1 class="text-center text-white">-------------------|OUR PLACED STUDENTS|--------------------</h1>
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <img src="{% static 'images/pexels-fauxels-3184465.jpg' %}" style="width: 100%; margin-top: 5%; margin-left: 5%; height: 200px">
+            <div class="content" style="height: 30px; width: 91%; margin-left: 7%;">
+                <p>Facebook</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'images/pexels-fauxels-3184465.jpg' %}" style="width: 100%; margin-top: 5%; margin-left: 4%; height: 200px">
+            <div class="content" style="height: 30px; width: 91%; margin-left: 7%">
+                <p>Amazon</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'images/pexels-fauxels-3184465.jpg' %}" style="width: 100%; margin-top: 5%; margin-left: 4%; height: 200px">
+            <div class="content" style="height: 30px; width: 91%; margin-left: 7%">
+                <p>Capgemini</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img src="{% static 'images/pexels-fauxels-3184465.jpg' %}" style="width: 100%; margin-top: 5%; margin-right: 5%; height: 200px">
+            <div class="content" style="height: 30px; width: 91%; margin-left: 7%">
+                <p>Infosys</p>
+            </div>
+        </div>
+    </div>
+</div>
+{%include 'footer.html'%}
+{% endblock %}

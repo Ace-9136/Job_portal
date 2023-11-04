@@ -1,0 +1,77 @@
+{% load static %}
+{% block body %}
+{% include 'user_navigation.html' %}
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #80B6DE;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #DEB887;
+  }
+
+  tr:hover {
+    background-color: #F0E68C;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .action-buttons a {
+    margin: 2px;
+  }
+</style>
+
+<marquee style="font-family: 'Monotype Corsiva'; font-size: 25px; background-color: yellow; margin-top: 1%">
+   APPLY FOR JOB
+</marquee>
+<hr>
+<div class="container">
+
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="form-row">
+<label class="font-weight-bold">Upload resume</label>
+<input type="file" class="form -control" name="resume">
+</div>
+
+<input type="submit" value="submit" class="btn btn-danger mt-3" >
+
+ </div>
+ {% if error == "close" %}
+    <script>
+        alert("Applications are closed");
+        window.location = "{% url 'user_latestjobs' %}";
+    </script>
+{% endif %}
+
+{% if error == "notopen" %}
+    <script>
+        alert("Apply after the start date");
+        window.location = "{% url 'user_latestjobs' %}";
+    </script>
+{% endif %}
+
+{% if error == "done" %}
+    <script>
+        alert("Application submitted successfully");
+        window.location = "{% url 'user_latestjobs' %}";
+    </script>
+{% endif %}
+{% endblock %}
+

@@ -33,7 +33,7 @@ Follow these steps to set up the project:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/job-portal.git
+    git clone https://github.com/Ace-9136/job-portal.git
     cd job-portal
     ```
 
